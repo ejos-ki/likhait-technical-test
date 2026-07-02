@@ -55,9 +55,9 @@ services:
     command: >
       sh -c "
         bundle install &&
-        rails db:migrate &&
-        rails db:seed &&
-        rails server -b 0.0.0.0
+        RAILS_ENV=development bundle exec rails db:schema:load &&
+        RAILS_ENV=development bundle exec rails db:seed &&
+        RAILS_ENV=development bundle exec rails server -b 0.0.0.0
       "
     networks:
       - expense_network

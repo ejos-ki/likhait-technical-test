@@ -1,0 +1,14 @@
+# Normalize line endings: default text files to LF in the repo
+* text=auto eol=lf
+
+# Scripts that run inside Linux containers MUST stay LF, regardless of contributor OS.
+# This prevents the "/bin/bash: - : invalid option" failure on Windows checkouts.
+*.sh text eol=lf
+backend/bin/* text eol=lf
+
+# Binary files: never modify their contents
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

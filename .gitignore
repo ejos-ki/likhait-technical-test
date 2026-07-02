@@ -32,6 +32,10 @@
 /frontend/node_modules
 /frontend/dist
 
+# Ruby gems installed into the app (build output, must not be committed)
+/backend/vendor/bundle
+/backend/.bundle
+
 # Environment variables
 .env
 .env.local
