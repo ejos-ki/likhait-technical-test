@@ -16,9 +16,7 @@ RUN apt-get update -qq && \
 COPY Gemfile Gemfile.lock ./
 
 # Configure bundler and install gems with retry logic
-RUN bundle config set --local deployment 'false' && \
-    bundle config set --local path 'vendor/bundle' && \
-    bundle install --jobs 4 --retry 3
+RUN bundle install --jobs 4 --retry 3
 
 # Copy application code
 COPY . .
